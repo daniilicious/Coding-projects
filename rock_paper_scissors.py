@@ -13,3 +13,10 @@ elif player_choice == computer_choice:
 else:
     winner = "Computer"
 print(f"The winner of the game is " + winner)
+
+if winner == "Player":
+    print("Congratulations! You won!")
+elif winner == "Computer":
+    print("Sorry! Computer won!")
+else:
+    print("It's a tie!")
