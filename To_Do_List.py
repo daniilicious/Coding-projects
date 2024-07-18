@@ -19,7 +19,11 @@ while True:
     todo_list.append(new_task)
     print("Adding task")
    elif choice == "2":
-    print("Removing task")
+    if not todo_list:
+      print("Your ToDo list is empty")
+    else:
+      todo_list.pop(-1)
+      print("Removing task")
    elif choice == "3":
     print("Quitting program")
     break
