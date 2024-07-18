@@ -1,10 +1,6 @@
-todo_list = ["groceries", "study"]
+todo_list = []
 
 while True:
-   new_task = input("Enter the task:")
-   todo_list.append(new_task)
-   print(f"Task {new_task} added successfully")
-
    if not todo_list:
       print("Your ToDo list is empty")
    else:
@@ -18,4 +14,12 @@ while True:
    print("3) Quit the program")
 
    choice = input("Choose a number from the menu: ")
-   break
+   if choice == "1":
+    new_task = input("Enter the task:")
+    todo_list.append(new_task)
+    print("Adding task")
+   elif choice == "2":
+    print("Removing task")
+   elif choice == "3":
+    print("Quitting program")
+    break
