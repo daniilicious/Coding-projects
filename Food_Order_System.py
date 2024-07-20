@@ -23,3 +23,7 @@ def create_summary(name, amount): #order summary if found
 
 print("Welcome to the Food Order System!")
 display_available_meals()
+name_input = input("Please enter your meal choice: ")
+amount_input = int(input("Please enter your order quantity:"))
+result = create_summary(name_input, amount_input)
+print(result)
