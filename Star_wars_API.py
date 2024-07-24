@@ -18,12 +18,14 @@ def fetch_data(option, count): #let's user decide which data is pulled
         
         if url is None:
             break
-    return result
+    return result[:count]
 
-result = fetch_data("people", 10) #function call
+count = int(input("Number of entities to download: "))
+result = fetch_data("people", count) #function call
 
 if result: #displays star wars characters
      for entity in result:
         print(entity["name"])
 else:
     print("Unable to download data") 
+
