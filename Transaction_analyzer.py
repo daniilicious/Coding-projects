@@ -18,7 +18,7 @@ def print_transactions(transactions): #print transactions with format
     for transaction in transactions:
         amount, statement = transaction
         print(f"${amount} - {statement}")
-print_transactions(data)
+
 
 def print_summary(transactions): #function to summarize transactions
     deposits = [transaction[0] for transaction in transactions if transaction[0] >= 0]
@@ -29,7 +29,23 @@ def print_summary(transactions): #function to summarize transactions
     print(f"${total_withdrawn} withdrawn")
     balance = total_deposits + total_withdrawn
     print(f"Current balance: ${balance}")
-print_summary(data)
+
+
+def analyze_transactions(transactions): #function to analyze transactions
+    transactions.sort()
+    largest_withdrawal = transactions[0]
+    largest_deposit = transactions[-1]
+    print(f"Largest withdrawal: {largest_withdrawal}")
+    print(f"Largest deposit: {largest_deposit}")
+    deposits = [transaction[0] for transaction in transactions if transaction[0] >= 0]
+    total_deposit = sum(deposits)
+    average_deposit = total_deposit / len(deposits) if deposits else 0
+    print(f"Average deposit: ${average_deposit}")
+    withdrawals = [transaction[0] for transaction in transactions if transaction[0] < 0]
+    total_withdrawals = sum(withdrawals)
+    average_withdrawal = total_withdrawals / len(withdrawals) if withdrawals else 0
+    print(f"Average withdrawal: ${average_withdrawal}")
+
 
 
 
