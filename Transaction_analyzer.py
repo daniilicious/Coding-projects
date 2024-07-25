@@ -27,6 +27,8 @@ def print_summary(transactions): #function to summarize transactions
     withdrawals = [transaction[0] for transaction in transactions if transaction[0] < 0]
     total_withdrawn = sum(withdrawals)
     print(f"${total_withdrawn} withdrawn")
+    balance = total_deposits + total_withdrawn
+    print(f"Current balance: ${balance}")
 print_summary(data)
 
 
