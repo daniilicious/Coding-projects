@@ -19,3 +19,15 @@ def print_transactions(transactions): #print transactions with format
         amount, statement = transaction
         print(f"${amount} - {statement}")
 print_transactions(data)
+
+def print_summary(transactions): #function to summarize transactions
+    deposits = [transaction[0] for transaction in transactions if transaction[0] >= 0]
+    total_deposits = sum(deposits)
+    print(f"${total_deposits} deposited")
+    withdrawals = [transaction[0] for transaction in transactions if transaction[0] < 0]
+    total_withdrawn = sum(withdrawals)
+    print(f"${total_withdrawn} withdrawn")
+print_summary(data)
+
+
+
