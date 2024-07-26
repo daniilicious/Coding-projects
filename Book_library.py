@@ -24,3 +24,24 @@ books = [book1, book2, book3]
 
 for book in books: #loop to display book info
     book.display_info()
+
+class Library: #class to hold books
+    def __init__(self):
+        self.books = []
+    def add_book(self, book): #method to add books
+        self.books.append(book)
+    def display_books(self): 
+        for book in self.books:
+            book.display_info()    
+    def get_book_by_title(self, title):
+        for book in self.books:
+            if book.title.lower() == title.lower():
+                return book
+        return None
+#instance of Library class    
+library = Library()
+library.add_book(book1)
+library.add_book(book2)
+library.add_book(book3)
+
+library.display_books()
