@@ -19,21 +19,16 @@ class Book:
 book1 = Book("The Hitchhikers Guide to the Galaxy", "Douglas Adams")
 book2 = Book("Malinche", "Laura Esquivel")
 book3 = Book("One Day", "David Nicholls")
-#Class list
-books = [book1, book2, book3]
-
-for book in books: #loop to display book info
-    book.display_info()
 
 class Library: #class to hold books
     def __init__(self):
         self.books = []
     def add_book(self, book): #method to add books
         self.books.append(book)
-    def display_books(self): 
+    def display_books(self): #method to display books
         for book in self.books:
             book.display_info()    
-    def get_book_by_title(self, title):
+    def get_book_by_title(self, title): #method for titles
         for book in self.books:
             if book.title.lower() == title.lower():
                 return book
